@@ -13,7 +13,7 @@ public class CountofprimenumberstillN {
         }
 
         private boolean isPrime(int i) {
-            for (int j = 2; j <= Math.sqrt(i);j++) {
+            for (int j = 2; j * j <= i;j++) {
                 if (i%j==0) {
                     return false;
                 }
