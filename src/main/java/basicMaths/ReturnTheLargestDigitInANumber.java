@@ -1,6 +1,6 @@
-package basicmaths;
+package basicMaths;
 
-public class Returnthelargestdigitinanumber {
+public class ReturnTheLargestDigitInANumber {
 
     public static void main(String[] args) {
         int n = 12345;

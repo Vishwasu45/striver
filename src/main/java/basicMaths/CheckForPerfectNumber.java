@@ -1,6 +1,6 @@
-package basicmaths;
+package basicMaths;
 
-public class Checkforperfectnumber {
+public class CheckForPerfectNumber {
 
     public static void main(String[] args) {
         int n = 28; // Example number

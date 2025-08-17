@@ -1,6 +1,6 @@
-package basicmaths;
+package basicMaths;
 
-public class Checkifthenumberisarmstrong {
+public class CheckIfTheNumberIsArmstrong {
 
     public static void main(String[] args) {
         int n = 153;

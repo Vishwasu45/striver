@@ -1,6 +1,6 @@
-package basicmaths;
+package basicMaths;
 
-public class Countalldigitsofanumber {
+public class CountAllDigitsOfANumber {
 
     public static void main(String[] args) {
         int n = 12345;

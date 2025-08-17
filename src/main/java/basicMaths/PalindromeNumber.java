@@ -1,4 +1,4 @@
-package basicmaths;
+package basicMaths;
 
 public class PalindromeNumber {
 

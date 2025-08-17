@@ -1,6 +1,6 @@
-package basicmaths;
+package basicMaths;
 
-public class Countnumberofodddigitsinanumber {
+public class CountNumberOfOddDigitsInANumber {
 
     public static void main(String[] args) {
         int n = 12345;

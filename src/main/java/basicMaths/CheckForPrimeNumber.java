@@ -1,6 +1,6 @@
-package basicmaths;
+package basicMaths;
 
-public class Checkforprimenumber {
+public class CheckForPrimeNumber {
 
     public static void main(String[] args) {
         int n = 29; // Example number to check

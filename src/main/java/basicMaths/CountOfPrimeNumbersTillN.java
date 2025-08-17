@@ -1,6 +1,6 @@
-package basicmaths;
+package basicMaths;
 
-public class CountofprimenumberstillN {
+public class CountOfPrimeNumbersTillN {
 
         public int primeUptoN(int n) {
             int count = 0;
@@ -22,7 +22,7 @@ public class CountofprimenumberstillN {
         }
 
         public static void main(String[] args) {
-            CountofprimenumberstillN main = new CountofprimenumberstillN();
+            CountOfPrimeNumbersTillN main = new CountOfPrimeNumbersTillN();
             int n = 6;
             int primeCount = main.primeUptoN(n);
             System.out.println("Number of prime numbers up to " + n + " is: " + primeCount);

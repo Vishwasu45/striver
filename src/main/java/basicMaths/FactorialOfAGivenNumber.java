@@ -1,6 +1,6 @@
-package basicmaths;
+package basicMaths;
 
-public class Factorialofagivennumber {
+public class FactorialOfAGivenNumber {
 
     public static void main(String[] args) {
         int n = 5;
