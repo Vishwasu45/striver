@@ -9,7 +9,34 @@ public class SecondHighestOccurringElement {
         SecondHighestOccurringElement obj = new SecondHighestOccurringElement();
         int[] nums = {1, 3, 2, 3, 4, 1, 3};
         System.out.println(obj.secondMostFrequentElement(nums));
+        System.out.println(obj.secondMostFrequentElementCopilot(nums));
 
+    }
+
+    public int secondMostFrequentElementCopilot(int[] nums) {
+        int max = Integer.MIN_VALUE;
+        int secMax = Integer.MIN_VALUE;
+        int index = -1;
+        int secIndex = -1;
+
+        int[] hash = new int[100001];
+
+        for(int num : nums) {
+            hash[num]++;
+        }
+
+        for (int i = 0; i < hash.length; i++) {
+            if (hash[i] > max) {
+                secMax = max;
+                secIndex = index;
+                max = hash[i];
+                index = i;
+            } else if (hash[i] > secMax && hash[i] != max) {
+                secMax = hash[i];
+                secIndex = i;
+            }
+        }
+        return secIndex;
     }
 
     public int secondMostFrequentElement(int[] nums) {

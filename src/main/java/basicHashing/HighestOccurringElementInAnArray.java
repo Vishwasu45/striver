@@ -4,13 +4,33 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class HighestOccuringElementInAnArray {
+public class HighestOccurringElementInAnArray {
 
     public static void main(String[] args) {
-        HighestOccuringElementInAnArray obj = new HighestOccuringElementInAnArray();
+        HighestOccurringElementInAnArray obj = new HighestOccurringElementInAnArray();
         int[] nums = {1, 3, 2, 3, 4, 1, 3};
         System.out.println(obj.mostFrequentElement(nums));
         System.out.println(obj.mostFrequentElementStriver(nums));
+        System.out.println(obj.mostFrequentElementCopilot(nums));
+    }
+
+    public int mostFrequentElementCopilot(int[] nums) {
+        int max = Integer.MIN_VALUE;
+        int index = -1;
+
+        int[] hash = new int[100001];
+
+        for(int num : nums) {
+            hash[num]++;
+        }
+
+        for (int i = 0; i < hash.length; i++) {
+            if (hash[i] > max) {
+                max = hash[i];
+                index = i;
+            }
+        }
+        return index;
     }
 
     public int mostFrequentElement(int[] nums) {
