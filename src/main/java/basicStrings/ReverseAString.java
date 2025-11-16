@@ -24,7 +24,7 @@ public class ReverseAString {
 
         List<Character> str2 =
                 new ArrayList<>(Arrays.asList('h', 'e', 'l', 'l', 'o'));
-        sol.reverseStringStriverEditorial(str2);
+        sol.reverseStringStriverEditorialBruteForce(str2);
         System.out.println();
         for (char c : str2) {
             System.out.print(c);
@@ -58,7 +58,7 @@ public class ReverseAString {
         }
     }
 
-    public void reverseStringStriverEditorial(List<Character> s) {
+    public void reverseStringStriverEditorialBruteForce(List<Character> s) {
         Stack<Character> stack = new Stack<>();
 
         // Push characters onto the stack
@@ -70,7 +70,21 @@ public class ReverseAString {
         for (int i = 0; i < s.size(); ++i) {
             s.set(i, stack.pop());
         }
+    }
 
-        return;
+    public void reverseStringStriverEditorialOptimal(List<Character> s) {
+        int start = 0, end = s.size() - 1;
+
+        // Until the string is reversed
+        while (start < end) {
+            // Swap the characters at start and end
+            char ch = s.get(start);
+            s.set(start, s.get(end));
+            s.set(end, ch);
+
+            // Move the pointers towards the center
+            start++;
+            end--;
+        }
     }
 }

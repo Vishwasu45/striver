@@ -18,4 +18,20 @@ public class CheckIfTheArrayIsSorted {
         }
         return true;
     }
+
+    boolean arraySortedOrNotBruteForce(int[] arr, int n) {
+        // Iterate through each element
+        for (int i = 0; i < arr.length - 1; i++) {
+
+            // Compare with every subsequent element
+            for (int j = i + 1; j < arr.length; j++) {
+
+                // If any element is out of order, return false
+                if (arr[i] > arr[j]) {
+                    return false;
+                }
+            }
+        }
+        return true; // All elements are in order
+    }
 }

@@ -1,6 +1,7 @@
 package basicHashing;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class SumOfHighestAndLowestOccurringFrequency {
 
@@ -9,7 +10,7 @@ public class SumOfHighestAndLowestOccurringFrequency {
         int[] nums = {4, 4, 5, 5, 6};
         System.out.println(obj.sumHighestAndLowestFrequency(nums));
         System.out.println(obj.sumHighestAndLowestFrequencyCopilot(nums));
-        System.out.println(obj.sumHighestAndLowestFrequencyStriver(nums));
+        System.out.println(obj.sumHighestAndLowestFrequencyStriverBruteForce(nums));
     }
 
     public int sumHighestAndLowestFrequency(int[] nums) {
@@ -69,7 +70,7 @@ public class SumOfHighestAndLowestOccurringFrequency {
         return max + min;
     }
 
-    public int sumHighestAndLowestFrequencyStriver(int[] nums) {
+    public int sumHighestAndLowestFrequencyStriverBruteForce(int[] nums) {
         // Variable to store the size of array
         int n = nums.length;
 
@@ -103,6 +104,35 @@ public class SumOfHighestAndLowestOccurringFrequency {
             maxFreq = Math.max(maxFreq, freq);
             minFreq = Math.min(minFreq, freq);
 
+        }
+
+        // Return the required sum
+        return maxFreq + minFreq;
+    }
+
+    public int sumHighestAndLowestFrequencyStriverOptimal(int[] nums) {
+        // Variable to store the size of array
+        int n = nums.length;
+
+        /* Variable to store maximum
+        and minimum frequency */
+        int maxFreq = 0, minFreq = n;
+
+        // HashMap
+        HashMap<Integer, Integer> mpp = new HashMap<>();
+
+        // Iterating on the array
+        for (int i = 0; i < n; i++) {
+            // Updating hashmap
+            mpp.put(nums[i], mpp.getOrDefault(nums[i], 0) + 1);
+        }
+
+        // Iterate on the map
+        for (int freq : mpp.values()) {
+            /* Update maximum and
+            minimum frequencies */
+            maxFreq = Math.max(maxFreq, freq);
+            minFreq = Math.min(minFreq, freq);
         }
 
         // Return the required sum

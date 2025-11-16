@@ -10,7 +10,7 @@ public class HighestOccurringElementInAnArray {
         HighestOccurringElementInAnArray obj = new HighestOccurringElementInAnArray();
         int[] nums = {1, 3, 2, 3, 4, 1, 3};
         System.out.println(obj.mostFrequentElement(nums));
-        System.out.println(obj.mostFrequentElementStriver(nums));
+        System.out.println(obj.mostFrequentElementStriverBruteForce(nums));
         System.out.println(obj.mostFrequentElementCopilot(nums));
     }
 
@@ -51,7 +51,53 @@ public class HighestOccurringElementInAnArray {
         return index;
     }
 
-    public int mostFrequentElementStriver(int[] nums) {
+    public int mostFrequentElementStriverBruteForce(int[] nums) {
+
+        // Variable to store the size of array
+        int n = nums.length;
+
+        // Variable to store maximum frequency
+        int maxFreq = 0;
+
+        /* Variable to store element
+        with maximum frequency */
+        int maxEle = 0;
+
+        // Visited array
+        boolean[] visited = new boolean[n];
+
+        // First loop
+        for (int i = 0; i < n; i++) {
+            // Skip second loop if already visited
+            if (visited[i]) continue;
+
+            /* Variable to store frequency
+            of current element */
+            int freq = 0;
+
+            // Second loop
+            for (int j = i; j < n; j++) {
+                if (nums[i] == nums[j]) {
+                    freq++;
+                    visited[j] = true;
+                }
+            }
+
+            /* Update variables if new element having
+            highest frequency is found */
+            if (freq > maxFreq) {
+                maxFreq = freq;
+                maxEle = nums[i];
+            } else if (freq == maxFreq) {
+                maxEle = Math.min(maxEle, nums[i]);
+            }
+        }
+
+        // Return the result
+        return maxEle;
+    }
+
+    public int mostFrequentElementStriverOptimal(int[] nums) {
 
         // Variable to store the size of array
         int n = nums.length;
