@@ -18,8 +18,6 @@ public class PalindromeNumber {
             reverse = reverse * 10 + remainder;
             n = n / 10;
         }
-        if (original == reverse)
-            return true;
-        return false;
+        return original == reverse;
     }
 }
